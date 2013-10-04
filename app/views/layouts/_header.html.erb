@@ -1,0 +1,12 @@
+<div class='header'>
+	<h1 class="head">MyAlbum</h1>
+	<div class='link'>
+		
+		<% unless current_user.blank? %>
+		
+			<%= link_to 'logout ', destroy_user_session_path, :method => :delete %>
+			<%= current_user.name %>
+			
+		<% end %>
+	</div>
+</div> 
