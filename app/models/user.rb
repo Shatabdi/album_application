@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
 
   devise :omniauthable, :omniauth_providers => [:facebook]
 
+  def get_fb_friend_list
+   friend_list ||= FbGraph::User.me(self.facebook_access_token.access_token).friends
+  end
 
 end
 

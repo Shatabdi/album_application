@@ -1,8 +1,42 @@
-<%= form_for  [@album, @picture], :html => { :multipart => true } do |f|  %>
+
+<%= form_for  [@album, @picture],   :html => { :multipart => true } do |f|  %>
 	<%= f.file_field :photo %>
 	<%= f.submit %> 
 <% end %>
 
-<% @album.pictures.each do |picture| %> 
-	<%= image_tag picture.photo.url %>
-<% end %>
+
+	<div class="flexslider" style = "width: 600px;">
+   <ul class="slides">
+  <% @album.pictures.each do |picture| %> 
+  <li>
+    
+   <%= image_tag picture.photo.url %>
+  </li>
+     <% end %>
+  </ul>
+ </div>
+
+
+
+
+<div class="span6">
+	<div class="portlet box yellow">
+		<div class="portlet-title">
+			<h4 class="glyphicons no-js facebook">
+				<i></i>
+				Facebook Friend list
+			</h4>
+			<div class="tools">
+				<a class="collapse" href="javascript:;"></a>
+				<a class="reload" href="javascript:;"></a>
+			</div>
+		</div>
+		<div class="portlet-body" style="display: block;" id="fbPortlet">
+			<div id="fbFriends" class="span12 float-left">
+				Loading....
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+

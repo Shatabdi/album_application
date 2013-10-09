@@ -1,0 +1,31 @@
+<div id="datatable">
+<table id = 'fb_friendlist'>
+	<thead>
+		<tr>
+			<th>picture</th>
+			<th>NAME</th>
+		</tr>
+	</thead>
+	<% unless @fb_friends.blank? %>
+		<% @fb_friends.each do |fb_friend| %>
+			<tbdoy>
+				<tr>
+					<div class='float-left fb-avatar-section'>
+						<td>
+						<%= image_tag "https://graph.facebook.com/#{fb_friend.identifier}/picture", 
+								:class => 'float-left' %>
+						</td>
+						<div class='float-left fb-avatar-desc'>
+							<div class='float-left full-width fb-avatar-name' id="fb_name_<%= fb_friend.identifier%>">
+								<td><%= fb_friend.raw_attributes['name'] %></td>
+							</div>
+						</div>
+					</div>
+				</tr>
+			</tbdoy>
+		<% end %>
+	<% else %>
+		You do not have any facebook friends to invite
+	<% end %>
+</table>	
+</div>

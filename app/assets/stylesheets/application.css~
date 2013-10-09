@@ -11,7 +11,7 @@
  *= require_self
  *= require dataTables/jquery.dataTables
  *= require flexslider
- *= require_tree .
+	*= require_tree .
  */
 /* CSS Document */
 .header
@@ -38,7 +38,4 @@
  	 float: right;
  		clear: both;
    width: 40%;
- }
- .flexslider{
- 	width: 600px;
  }

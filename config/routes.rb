@@ -6,7 +6,10 @@ AlbumApp::Application.routes.draw do
   }
 
   resources :albums do
-    resources :pictures
+    collection do
+      post 'fb_friends'
+    end
+    resources :pictures    
   end
   
 
